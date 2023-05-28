@@ -70,7 +70,11 @@
 
 #define USB_NO_VBUS_PIN   1
 
-#define TINYUF2_PROTECT_BOOTLOADER    0
+#ifdef TINYUF2_SELF_UPDATE
+#    define TINYUF2_PROTECT_BOOTLOADER 1
+#else
+#    define TINYUF2_PROTECT_BOOTLOADER 0
+#endif
 
 //--------------------------------------------------------------------+
 // RCC Clock
